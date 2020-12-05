@@ -11,7 +11,7 @@ public class CarMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    private float moveSpeed = 10f;
+    private float moveSpeed = 0.01f;
 
     private void Start()
     {
