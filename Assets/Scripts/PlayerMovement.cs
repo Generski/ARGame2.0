@@ -25,9 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = (move.y * transform.forward) /* + (move.x * transform.right)*/;
+        Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
 
-        transform.Rotate(new Vector3(transform.rotation.x, move.x * moveSpeed, transform.rotation.z));
         rb.MovePosition(transform.position + movement * moveSpeed * Time.deltaTime);
     }
 
