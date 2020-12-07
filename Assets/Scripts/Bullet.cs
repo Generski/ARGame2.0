@@ -28,6 +28,10 @@ public class Bullet : MonoBehaviour
         {
             other.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
+        else
+        {
+            Destroy();
+        }
     }
 
     void Destroy()
