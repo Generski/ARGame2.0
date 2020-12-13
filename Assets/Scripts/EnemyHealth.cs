@@ -7,9 +7,14 @@ public class EnemyHealth : MonoBehaviour
     private int maxHealth = 3;
     private int health;
 
+    private GameObject gameManager;
+    private int myScoreAmount = 10;
+
     private void Start()
     {
         health = maxHealth;
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     public void TakeDamage(int damage)
@@ -39,6 +44,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        gameManager.GetComponent<Score>().AddScore(myScoreAmount);
+
         Destroy(gameObject);
     }
 }
