@@ -24,6 +24,19 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Enemy hit!");
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Car")
+        {
+            float dist = Vector3.Distance(transform.position, other.transform.position);
+
+            if(dist <= 0.01f)
+            {
+                Die();
+            }
+        }
+    }
+
     private void Die()
     {
         Destroy(gameObject);
