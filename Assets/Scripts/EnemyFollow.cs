@@ -27,10 +27,12 @@ public class EnemyFollow : MonoBehaviour
 
         Vector3 direction = player.position - transform.position;
 
+        Vector3 moveDirection = new Vector3(direction.x, transform.position.y, direction.z);
+
         transform.LookAt(player);
 
         if (!playerInShootingRange)
-            rb.MovePosition(transform.position + (direction * moveSpeed * Time.deltaTime));
+            rb.MovePosition(transform.position + (moveDirection * moveSpeed * Time.deltaTime));
 
         else if (playerInShootingRange)
         {
