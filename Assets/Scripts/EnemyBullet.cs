@@ -39,8 +39,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Player hit!");
-            //other.GetComponent<EnemyHealth>().TakeDamage(damage);
+            other.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 

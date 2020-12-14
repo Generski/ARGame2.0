@@ -21,7 +21,7 @@ public class EnemyFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float dist = Vector3.Distance(transform.position, player.position);
 
