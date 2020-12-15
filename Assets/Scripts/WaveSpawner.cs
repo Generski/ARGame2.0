@@ -26,6 +26,8 @@ public class WaveSpawner : MonoBehaviour
 
     private SpawnState state = SpawnState.COUNTING;
 
+    private int increaseAmount = 0;
+
     private void Start()
     {
         waveCountdown = timeBetweenWaves;
@@ -95,6 +97,16 @@ public class WaveSpawner : MonoBehaviour
         {
             SpawnEnemy(_wave.enemy);
             yield return new WaitForSeconds(1f / _wave.rate);
+        }
+
+        if(increaseAmount >= 2)
+        {
+            _wave.count++;
+            increaseAmount = 1;
+        }
+        else
+        {
+            increaseAmount++;
         }
 
         state = SpawnState.WAITING;

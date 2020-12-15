@@ -9,6 +9,9 @@ public class PlayerShoot : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
+    private bool canShoot = true;
+    [SerializeField] private float fireRate;
+
 
     private void Awake()
     {
@@ -18,7 +21,21 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (canShoot)
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+            StartCoroutine(Cooldown());
+        }
+    }
+
+    IEnumerator Cooldown()
+    {
+        canShoot = false;
+
+        yield return new WaitForSeconds(fireRate);
+
+        canShoot = true;
     }
 
     private void OnEnable()
@@ -29,5 +46,10 @@ public class PlayerShoot : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+    public void IncreaseFireRate()
+    {
+        fireRate = fireRate / 2;
     }
 }

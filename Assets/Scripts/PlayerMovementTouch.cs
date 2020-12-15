@@ -38,4 +38,9 @@ public class PlayerMovementTouch : MonoBehaviour
     {
         controls.Disable();
     }
+
+    public void IncreaseMoveSpeed()
+    {
+        moveSpeed = moveSpeed * 1.5f;
+    }
 }

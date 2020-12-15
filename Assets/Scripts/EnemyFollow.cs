@@ -14,6 +14,8 @@ public class EnemyFollow : MonoBehaviour
     public GameObject bulletPrefab;
     private bool canShoot = true;
 
+    [SerializeField] private float fireRate = 1f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -55,7 +57,7 @@ public class EnemyFollow : MonoBehaviour
     {
         canShoot = false;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(fireRate);
 
         canShoot = true;
     }

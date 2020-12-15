@@ -115,6 +115,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   firePoint: {fileID: 2792661116999192452}
   bulletPrefab: {fileID: 5727293787734676709, guid: 82b46fa1f5ee9e74e907169cde5e0faf, type: 3}
+  fireRate: 1
 --- !u!135 &2792661115818933455
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -126,7 +127,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2792661116756705985
 GameObject:

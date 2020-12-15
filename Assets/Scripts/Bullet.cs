@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        Invoke("Destroy", 2f);
+        Invoke("Destroy", 0.5f);
 
         targetPos = GameObject.FindGameObjectWithTag("Enemy").transform;
 
