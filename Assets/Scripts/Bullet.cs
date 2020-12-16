@@ -22,6 +22,8 @@ public class Bullet : MonoBehaviour
         targetPos = GameObject.FindGameObjectWithTag("Enemy").transform;
 
         target = new Vector3(targetPos.position.x, targetPos.position.y, targetPos.position.z);
+
+        FindObjectOfType<AudioManager>().Play("Shoot");
     }
 
     private void FixedUpdate()

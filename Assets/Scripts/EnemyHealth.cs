@@ -44,6 +44,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<AudioManager>().Play("Death");
+
         gameManager.GetComponent<Score>().AddScore(myScoreAmount);
 
         Destroy(gameObject);

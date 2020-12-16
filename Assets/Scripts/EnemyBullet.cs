@@ -22,6 +22,8 @@ public class EnemyBullet : MonoBehaviour
         target = new Vector3(playerPos.position.x, playerPos.position.y, playerPos.position.z);
 
         Invoke("Destroy", 2f);
+
+        FindObjectOfType<AudioManager>().Play("Shoot");
     }
 
     private void FixedUpdate()

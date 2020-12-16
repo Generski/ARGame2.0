@@ -37,6 +37,8 @@ public class Score : MonoBehaviour
             scoreText.text = "$ " + playerScore.ToString();
 
             buyHPUI.SetActive(false);
+
+            FindObjectOfType<AudioManager>().Play("Money");
         }
         else
         {
@@ -55,6 +57,8 @@ public class Score : MonoBehaviour
             scoreText.text = "$ " + playerScore.ToString();
 
             buyGunUI.SetActive(false);
+
+            FindObjectOfType<AudioManager>().Play("Money");
         }
         else
         {
@@ -73,6 +77,8 @@ public class Score : MonoBehaviour
             scoreText.text = "$ " + playerScore.ToString();
 
             buySpeedUI.SetActive(false);
+
+            FindObjectOfType<AudioManager>().Play("Money");
         }
         else
         {
